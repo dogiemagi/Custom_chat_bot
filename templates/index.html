@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="main-container">
+        <!-- File Upload Section -->
+        <div class="upload-container">
+            <h2>1. Upload Your Document</h2>
+            <p>Upload a CSV or PDF file to start chatting.</p>
+            <form id="upload-form" enctype="multipart/form-data">
+                <input type="file" id="file-input" name="file" accept=".csv,.pdf">
+                <button type="submit">Upload & Process</button>
+            </form>
+            <div id="upload-status"></div>
+        </div>
+
+        <!-- Chat Section -->
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2>2. Chat with Your Document</h2>
+            </div>
+            <div class="chat-box" id="chat-box">
+                <div class="message bot-message">
+                    <p>Please upload a document to begin the conversation.</p>
+                </div>
+            </div>
+            <form class="chat-input-form" id="chat-form">
+                <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" disabled>
+                <button type="submit" disabled>Send</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
